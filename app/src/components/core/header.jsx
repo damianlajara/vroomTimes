@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default function Header() {
   return (
@@ -18,16 +18,17 @@ export default function Header() {
         {/* <!-- Collect the nav links, forms, and other content for toggling --> */}
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav">
-            <li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
+            <li className="active"><a href="#columnA">Column A <span className="sr-only">(current)</span></a></li>
+            <li><a href="#columnB">Column B</a></li>
+            <li><a href="#columnC">Column C</a></li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filter <span className="caret"></span></a>
               <ul className="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="#">Most Recent</a></li>
+                <li><a href="#">Author</a></li>
+                <li><a href="#">A-Z</a></li>
                 <li role="separator" className="divider"></li>
                 <li><a href="#">Separated link</a></li>
               </ul>
