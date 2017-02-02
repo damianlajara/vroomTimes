@@ -1,5 +1,10 @@
+// TODO: Extract Text Plugin should only be used in prod since it disables Hot Reload!
+// I abstracted the config to its own file. Now all that's left to do is to correctly
+// use this config when NODE ENV is prod
+
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 
@@ -32,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        loaders: ['style-loader', 'css?sourceMap', 'postcss' ,'sass?sourceMap']
+        loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -63,6 +68,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('styles.css')
   ]
 };

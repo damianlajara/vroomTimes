@@ -1,4 +1,4 @@
-@import url('https://fonts.google.com/?selection.family=Josefin+Sans|Nova+Square|Oxygen:300|Rajdhani|Roboto+Condensed:300');
+@import url('https://fonts.google.com/?selection.family=Josefin+Sans|Nova+Square|Oxygen:100|Rajdhani|Roboto+Condensed:300');
 
 $main-color: #F85658;
 $bg-dark: #F8F8F8;
@@ -7,20 +7,26 @@ $bg-light: #fff;
 body {
   padding-top: 50px;
   background-color: $bg-light;
-  font-family: 'Oxygen', 'Nova Square', sans-serif;
+  font-family: 'Josefin Sans', 'Nova Square', sans-serif;
   font-size: 23px;
   line-height: 1.4em;
 }
 
-
-.row-no-padding > [class*="col-"] {
+.row-no-padding {
+  [class*="col-"] {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
 }
 
 .main-content {
   background-color: $bg-dark;
   .post {
+    .post-title {
+      color: #000;
+      font-size: 22px;
+      text-decoration: none;
+    }
     .post-date {
       color: #727272;
       display: block;
@@ -40,5 +46,22 @@ body {
       text-transform: lowercase;
       margin: 5px 0;
     }
+  }
+}
+
+.item {
+  .carousel-caption {
+    background: rgba(0,0,0,.80);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-caption {
+    right: 0;
+    left: 0;
   }
 }

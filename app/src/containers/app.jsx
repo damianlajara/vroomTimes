@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Header } from '../components';
+import '../styles/main.scss';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -17,107 +19,93 @@ export default class App extends Component {
     const columns = data.page.content.filter((content) => /column/i.test(content.name));
     console.log("columns: ", columns);
   }
-                          
+
   render() {
     const carousel = (
-    <div id="myCarousel" className="carousel slide">
-                
-                
-                <div className="carousel-inner">
-                    <div className="item active">
-                        <div className="row row-no-padding">
-                            <div className="col-xs-6"><a href="#x"><img src="http://html.crunchpress.com/materialmag/images/fsimg3.jpg" alt="Image" className="img-responsive"/></a>
-                              <div className="carousel-caption">
-                                <h3>hello</h3>
-                                <p>world</p>
-                              </div>
-                            </div>
-                            <div className="col-xs-6"><a href="#x"><img src="http://html.crunchpress.com/materialmag/images/fsimg2.jpg" alt="Image" className="img-responsive"/></a>
-                              <div className="carousel-caption">
-                                <h3>world</h3>
-                                <p>hello</p>
-                              </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                    
-                    <div className="item">
-                        <div className="row row-no-padding">
-                            <div className="col-xs-6"><a href="#x" className="thumbnail"><img src="http://placehold.it/1000x500" alt="Image" className="img-responsive"/></a>
-                              <div className="carousel-caption">
-                                <h3>Title</h3>
-                                <p>Content</p>
-                              </div>
-                            </div>
-                            <div className="col-xs-6"><a href="#x" className="thumbnail"><img src="http://placehold.it/1000x500" alt="Image" className="img-responsive"/></a>
-                              <div className="carousel-caption">
-                                <h3>Title</h3>
-                                <p>Content</p>
-                              </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                    
-                    <div className="item">
-                        <div className="row row-no-padding">
-                            <div className="col-xs-6"><a href="#x" className="thumbnail"><img src="http://placehold.it/1000x500" alt="Image" className="img-responsive"/></a>
-                              <div className="carousel-caption">
-                                <h3>Title</h3>
-                                <p>Content</p>
-                              </div>
-                            </div>
-                            <div className="col-xs-6"><a href="#x" className="thumbnail"><img src="http://placehold.it/1000x500" alt="Image" className="img-responsive"/></a>
-                              <div className="carousel-caption">
-                                <h3>Title</h3>
-                                <p>Content</p>
-                              </div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-				<a className="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 
-                <a className="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+      <div className="row">
+        <div className="col-md-12">
+          <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
+
+            <div className="carousel-inner" role="listbox">
+              <div className="item active">
+                <img src="http://html.crunchpress.com/materialmag/images/fsimg3.jpg" alt="..."/>
+                <div className="carousel-caption">
+                  <h3>Header</h3>
+                  <p>Caption</p>
+                </div>
+              </div>
+              <div className="item">
+                <img src="http://html.crunchpress.com/materialmag/images/fsimg2.jpg" alt="..."/>
+                <div className="carousel-caption">
+                  <h3>Header</h3>
+                  <p>Caption</p>
+                </div>
+              </div>
+
             </div>
+
+            <a className="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+              <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span className="sr-only">Previous</span>
+            </a>
+            <a className="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+              <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span className="sr-only">Next</span>
+            </a>
+          </div>
         </div>
+      </div>
   )
-    
+
     const post = (
-      <section>
-        <div className="post">
-          <div className="row">
-            <div className="col-md-6 media">
-              <img src="https://paullaros.bitbucket.io/ada1.1/img/photos/DeathtoStock_EnergyandSerenity31.jpg" className="img-responsive"/>
-            </div>
-            <div className="col-md-6 caption">
-              <span className="post-tag">#music</span>
-              <a href="post-image.html" className="post-title">Don't look at me</a>
-              <span className="post-date">19 Sept 2015</span>
-              <p className="post-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis <a href="#">parturient montes</a>, nascetur ridiculus mus. Aenean commodo ligula eget dolor.</p>
+      <div className="col-md-12 col-lg-6">
+        <div className="row post">
+          <div className="col-md-6 media">
+            <img src="http://placehold.it/500x350/EEE" className="img-responsive"/>
+          </div>
+          <div className="col-md-6 post-caption">
+            <span className="post-tag">Article</span>
+            <a href="post-image.html" className="post-title">Don't look at me</a>
+            <span className="post-date">19 Sept 2015</span>
+            <p className="post-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis <a href="#">parturient montes</a>, nascetur ridiculus mus. Aenean commodo ligula eget dolor.</p>
+          </div>
+        </div>
+      </div>
+    )
+
+    const card = (
+      <div className="col-md-12">
+          <div style={{padding: 0}}>
+            <img src="http://placehold.it/250x250/EEE"/>
+              <div className="caption">
+                <h4>Thumbnail label</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+                <a href="#" className="btn btn-default btn-xs pull-right" role="button"><i className="glyphicon glyphicon-edit"></i></a> <a href="#" className="btn btn-info btn-xs" role="button">Button</a> <a href="#" className="btn btn-default btn-xs" role="button">Read More</a>
             </div>
           </div>
         </div>
-      </section>
     )
-                          
     return (
      <div className="container-fluid">
        <Header />
-        <div className="row">
-          <div className="col-md-12">
-            {carousel}
-          </div>
-        </div>
        <div className="row main-content">
          <div className="col-md-8">
-           <p>Hello World! Checking to see!!</p>
-           {post}
+           {carousel}
+           <div className="row">
+             {post}
+             {post}
+             {post}
+             {post}
+           </div>
          </div>
          <div className="col-md-4">
-
+           <div className="row">
+             {card}
+             {card}
+             {card}
+             {card}
+           </div>
          </div>
        </div>
      </div>
@@ -143,7 +131,7 @@ const data = {
                     },
                     assets: []
                 }]
-            },           
+            },
             {
                 name: "cColumn",
                 rank: 4,
@@ -442,12 +430,3 @@ const data = {
         ]
     }
 }
-          
-          
-        
-
-
-
-
-
-
