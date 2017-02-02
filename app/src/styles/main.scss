@@ -1,11 +1,44 @@
 @import url('https://fonts.google.com/?selection.family=Josefin+Sans|Nova+Square|Oxygen:300|Rajdhani|Roboto+Condensed:300');
 
 $main-color: #F85658;
+$bg-dark: #F8F8F8;
+$bg-light: #fff;
 
 body {
   padding-top: 50px;
-  background-color: #E7EDEE;
+  background-color: $bg-light;
   font-family: 'Oxygen', 'Nova Square', sans-serif;
   font-size: 23px;
   line-height: 1.4em;
+}
+
+
+.row-no-padding > [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.main-content {
+  background-color: $bg-dark;
+  .post {
+    .post-date {
+      color: #727272;
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .post-caption {
+      padding: 20px 24px;
+    }
+    .post-description {
+      margin: 14px auto;
+    }
+    .post-tag {
+      color: #FF7C26;
+      display: block;
+      font-size: 15px;
+      text-transform: lowercase;
+      margin: 5px 0;
+    }
+  }
 }
