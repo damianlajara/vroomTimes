@@ -19,9 +19,14 @@ export default function MainContent({ columns }) {
   let firstSlide = {};
   let secondSlide = {};
   if(mainColumns.length > 0) {
+    // TODO: Try to modify inline the original content,
+    // so it wont show up twice in featured and in columns
+    // Maybe do something like:
+    // firstSlide = mainColumns[0].collections.splice(0,1)[0];
+    // secondSlide = mainColumns[0].collections.splice(3,1)[0];
     console.log("main columns length > 0", mainColumns.length > 0);
     firstSlide = mainColumns[0].collections[0];
-    secondSlide = mainColumns[0].collections[3];
+    secondSlide = mainColumns[0].collections[4];
   }
   console.log("first slide: ", firstSlide);
   console.log("second slide: ", secondSlide);
