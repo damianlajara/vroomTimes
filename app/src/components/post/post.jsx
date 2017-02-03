@@ -15,7 +15,7 @@ export default function Post({ post = {}}) {
         <div className={`col-md-${hasImage ? 6 : 12} post-caption`}>
           <span className="post-tag">{post.desk || post.type || post.typeOfMaterial}</span>
           <a href={post.url} className="post-title">{post.headline}</a>
-          <span className="post-date">{post.publicationDt}</span>
+          <span className="post-date">{post.publicationDt ? post.publicationDt.slice(0,10) : ''}</span>
           <p className="post-description">{post.summary}</p>
         </div>
       </div>
