@@ -10,7 +10,7 @@ export default function Column({ title, collections = [] }) {
       <h3 className="column-title" id="ColumnA">{title}</h3>
       <div className="row">
         {
-          filteredCollections.map((content, i) => <Post content={content.assets} key={i} />)
+          posts.map((post, i) => <Post content={post} key={i} />)
         }
       </div>
     </div>
