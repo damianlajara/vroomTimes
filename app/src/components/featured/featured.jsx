@@ -2,7 +2,6 @@ import React from 'react';
 import { renderImage } from '../../helpers/utils.js';
 
 export default function Featured({ slides = [] }) {
-  console.log("slides: ", slides);
   return (
     <div className="row featured">
       <div className="col-md-12">
@@ -12,8 +11,6 @@ export default function Featured({ slides = [] }) {
             {
               slides && slides.length > 0 &&
               slides.map((slide, i) => {
-                console.log("slide: ", slide);
-                console.log("post: ", slide.assets);
                 let content = slide.assets[0];
                 return (
                   <div key={i} className={`item ${i === 0 ? 'active' : ''}`}>

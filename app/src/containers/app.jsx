@@ -11,10 +11,10 @@ export default class App extends Component {
   }
 
   componentWillMount() {
-     fetch('../../../dist/api.json')
+     fetch('http://np-ec2-nytimes-com.s3.amazonaws.com/dev/test/nyregion2.js')
      .then(response => response.json())
      .then((data) => {
-       const columns = data.content.filter((content) => /column/i.test(content.name));
+       const columns = data.page.content.filter((content) => /column/i.test(content.name));
        this.setState({ columns });
      })
   }

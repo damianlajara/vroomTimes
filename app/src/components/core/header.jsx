@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Header({ columnTitles = []}) {
-  console.log("titles:", columnTitles);
   return (
     <nav className="navbar navbar-default navbar-fixed-top">
       <div className="container-fluid">
