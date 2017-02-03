@@ -1,6 +1,7 @@
 @import url('https://fonts.google.com/?selection.family=Josefin+Sans|Nova+Square|Oxygen:100|Rajdhani|Roboto+Condensed:300');
 
 $main-color: #F85658;
+$light-color: #ffab40;
 $bg-dark: #F8F8F8;
 $bg-light: #fff;
 
@@ -12,10 +13,30 @@ body {
   line-height: 1.4em;
 }
 
+nav.navbar {
+  z-index: 9999;
+}
+
 .row-no-padding {
   [class*="col-"] {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+}
+
+/* Fix for irregular bootstrap grid */
+.columns {
+  .row > .col-lg-6:nth-child(3n+1) {
+    clear: both;
+  }
+  .row > .col-md-12:nth-child(2n+1) {
+    clear: both;
+  }
+  .row > .col-lg-3:nth-child(3n+1) {
+    clear: both;
+  }
+  .row > .col-md-6:nth-child(3n+1) {
+    clear: both;
   }
 }
 
@@ -32,6 +53,8 @@ body {
   .side-content {
     padding: 0 2.5em 0 2.5em;
     .title {
+      margin-left: 15px;
+      border-left: 6px solid $main-color;
       padding: 0 15px 0 15px;
     }
   }
@@ -63,11 +86,12 @@ body {
       margin: 14px auto;
     }
     .post-tag {
-      color: #FF7C26;
       display: block;
       font-size: 15px;
-      text-transform: lowercase;
       margin: 5px 0;
+      color: $light-color;
+      transition: color 0.3s ease;
+      text-transform: uppercase;
     }
   }
 }
@@ -84,10 +108,11 @@ body {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 16px;
     a {
-      color: #ffab40;
+      color: $light-color;
       margin-right: 16px;
       transition: color 0.3s ease;
       text-transform: uppercase;
+      /*cursor: pointer;*/
       &:hover {
         color: #ffd8a6;
         text-decoration: none;

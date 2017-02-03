@@ -1,15 +1,18 @@
 import React from 'react';
-export default function Card() {
+import { postHasImage, renderImage } from '../../helpers/utils.js';
+
+export default function Card({ post = {}}) {
   return (
     <div className="col-md-12">
         <div className="card" style={{padding: 0}}>
-          <img className="media img-responsive" src="http://placehold.it/450x250/EEE"/>
+          { postHasImage(post) && renderImage(post) }
           <div className="card-content caption">
-            <h4 className="card-title">Thumbnail label</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+            <h4 className="card-title">{post.headline}</h4>
+            <div dangerouslySetInnerHTML={{__html: post.body}} />
+            <p>{post.summary}</p>
           </div>
           <div className="card-action">
-            <a href="#" target="new_blank">Read More</a>
+            <a>{post.type}</a>
           </div>
         </div>
       </div>

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Footer extends Component {
-  render() {
-    return (
-      <footer>
-        <p>Damian lajara</p>
-      </footer>
-    );
-  }
+export default function Footer() {
+  return (
+    <footer className="navbar footer navbar-default navbar-bottom">
+      <div className="container-fluid">
+        <p className="navbar-text">Damian Lajara © 2017</p>
+      </div>
+    </footer>
+  );
 }

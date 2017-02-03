@@ -1,17 +1,19 @@
 import React from 'react';
+import { postHasImage, renderImage } from '../../helpers/utils.js';
 
-export default function Post({ post }) {
+export default function Post({ post = {}}) {
+  const hasImage = postHasImage(post);
   return (
-    <div className="col-md-12 col-lg-6">
+    // <div className="col-md-12 col-lg-6">
+    <div className={`col-md-${hasImage ? 12 : 6} col-lg-${hasImage ? 6 : 3}`}>
       <div className="row post">
-        <div className="col-md-6 media">
-          {
-            post.images &&
-            const image = post.images[0].map(({ types }) => types.filter(({ type }) => /articleLarge|hpLarge/i.test(type)))[0] &&
-            <img src={`https://static01.nyt.com/${image.content}`} alt={image.caption} className="img-responsive"/>
-          }
-        </div>
-        <div className="col-md-6 post-caption">
+        {
+          hasImage &&
+          <div className="col-md-6">
+            { renderImage(post) }
+          </div>
+        }
+        <div className={`col-md-${hasImage ? 6 : 12} post-caption`}>
           <span className="post-tag">{post.desk || post.type || post.typeOfMaterial}</span>
           <a href={post.url} className="post-title">{post.headline}</a>
           <span className="post-date">{post.publicationDt}</span>
