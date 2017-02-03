@@ -1,25 +1,29 @@
 import React from 'react';
-export default function Featured() {
+import { renderImage } from '../../helpers/utils.js';
+
+export default function Featured({ slides = [] }) {
+  console.log("slides: ", slides);
   return (
     <div className="row featured">
       <div className="col-md-12">
         <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
 
           <div className="carousel-inner" role="listbox">
-            <div className="item active">
-              <img src="http://html.crunchpress.com/materialmag/images/fsimg3.jpg" alt="..."/>
-              <div className="carousel-caption">
-                <h3>Header</h3>
-                <p>Caption</p>
-              </div>
-            </div>
-            <div className="item">
-              <img src="http://html.crunchpress.com/materialmag/images/fsimg2.jpg" alt="..."/>
-              <div className="carousel-caption">
-                <h3>Header</h3>
-                <p>Caption</p>
-              </div>
-            </div>
+            {
+              slides && slides.length > 0 &&
+              slides.map((slide, i) => {
+                let content = slide.assets[1] || slide.assets[0];
+                return (
+                  <div key={i} className={`item ${i === 0 ? 'active' : ''}`}>
+                    {renderImage(content, true)}
+                    <div className="carousel-caption">
+                      <h3>{content.headline}</h3>
+                      <p>{content.summary}</p>
+                    </div>
+                  </div>
+                )
+              })
+            }
 
           </div>
 

@@ -25,14 +25,11 @@ export function flatten(arr) {
   return arr.reduce((a, b) => a.concat(b), []);
 }
 
+// Given a post, it checks if it has attached images. If It does it renders a square image or a jumbo one
 export function renderImage(post, featured=false) {
   let image = null;
-  // console.log("post: ", post);
   if(postHasImage(post)) {
-    // const types = post.images[0].map(({ types }) => types.filter(({ type }) => /articleLarge|hpLarge/i.test(type)))
     const imgTypes = post.images[0].types.filter(({ type }) => featured ? /superJumbo/i.test(type) : /square320/i.test(type));
-    // console.log("types: ", post.images[0].types);
-    // console.log("filtered types: ", imgTypes);
     if(imgTypes.length > 0) {
       image = <img src={`https://static01.nyt.com/${imgTypes[0].content}`} alt={imgTypes[0].caption} className="img-responsive"/>
     }

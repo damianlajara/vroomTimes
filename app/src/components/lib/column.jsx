@@ -3,8 +3,6 @@ import Post from '../post';
 import { filterCollections, postHasImage, swap, flatten } from '../../helpers/utils.js';
 
 const sortPosts = function(posts = []) {
-
-
   const imgPosts = posts.filter((post) => postHasImage(post));
   const txtPosts = posts.filter((post) => !postHasImage(post));
   let lastTxtPost = null;
@@ -27,7 +25,6 @@ const sortPosts = function(posts = []) {
   if(lastTxtPost) {
     temp.concat(lastTxtPost);
   }
-  // console.log("temp: ", temp);
   return temp;
 }
 
@@ -35,7 +32,6 @@ export default function Column({ title, collections = [] }) {
   const filteredCollections = filterCollections(collections);
   const posts = flatten(filteredCollections.map(({ assets }) => assets));
   const filteredPosts = posts.filter(({ type }) => !/singlead|html|sectionfrontvideoplayer/i.test(type));
-  // console.log("filtered: ", filteredPosts);
   return (
     <div className="columns">
       <h3 className="column-title" id={title}>{title}</h3>
