@@ -14,15 +14,7 @@ export default class App extends Component {
      fetch('../../../dist/api.json')
      .then(response => response.json())
      .then((data) => {
-       console.log(data);
        const columns = data.content.filter((content) => /column/i.test(content.name));
-       console.log("columns: ", columns);
-       const filteredColumns = columns.map(({ collections }) => {
-         return collections.filter(({ excludedFromFeed, assets, renderStyle }) => {
-           return !(excludedFromFeed || /ads/i.test(renderStyle) || assets.length < 1);
-         });
-       });
-       console.log("filtered columns: ", filteredColumns);
        this.setState({ columns });
      })
   }

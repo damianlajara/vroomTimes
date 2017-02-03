@@ -8,6 +8,8 @@ const renderColumns = (mainColumns = []) => {
   }
 }
 
+const isEmpty = (obj) => Object.getOwnPropertyNames(obj).length == 0;
+
 export default function MainContent({ columns }) {
   console.log("received columns: ", columns);
   const mainColumns = columns.slice(0, columns.length-1);
@@ -23,10 +25,11 @@ export default function MainContent({ columns }) {
   }
   console.log("first slide: ", firstSlide);
   console.log("second slide: ", secondSlide);
+  const slides = !isEmpty(firstSlide) && !isEmpty(secondSlide) ? [firstSlide, secondSlide] : []
   return (
     <div className="row main-content">
       <div className="col-md-8">
-        <Featured slides={[firstSlide, secondSlide]} />
+        <Featured slides={slides} />
         { renderColumns(mainColumns) }
       </div>
       <div className="col-md-4">

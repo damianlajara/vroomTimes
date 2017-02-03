@@ -12,7 +12,9 @@ export default function Featured({ slides = [] }) {
             {
               slides && slides.length > 0 &&
               slides.map((slide, i) => {
-                let content = slide.assets[1] || slide.assets[0];
+                console.log("slide: ", slide);
+                console.log("post: ", slide.assets);
+                let content = slide.assets[0];
                 return (
                   <div key={i} className={`item ${i === 0 ? 'active' : ''}`}>
                     {renderImage(content, true)}

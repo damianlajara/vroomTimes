@@ -4,7 +4,6 @@ import { postHasImage, renderImage } from '../../helpers/utils.js';
 export default function Post({ post = {}}) {
   const hasImage = postHasImage(post);
   return (
-    // <div className="col-md-12 col-lg-6">
     <div className={`col-md-${hasImage ? 12 : 6} col-lg-${hasImage ? 6 : 3}`}>
       <div className="row post">
         {
