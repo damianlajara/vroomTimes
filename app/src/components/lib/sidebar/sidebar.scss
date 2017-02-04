@@ -1,0 +1,10 @@
+@import '../../../styles/colors';
+
+.side-content {
+  padding: 0 2.5em 0 2.5em;
+  .title {
+    margin-left: 15px;
+    border-left: 6px solid $main-color;
+    padding: 0 15px 0 15px;
+  }
+}

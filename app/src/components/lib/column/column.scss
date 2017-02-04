@@ -1,0 +1,24 @@
+@import '../../../styles/colors';
+
+.columns {
+  .column-title {
+    border-left: 6px solid $main-color;
+    padding-left: 15px;
+    margin: 40px 0 20px 0;
+  }
+  /* Fix for irregular bootstrap grid */
+  .row > .article {
+    &:first-child {
+      .post {
+        padding-left: 15px;
+      }
+    }
+    & + .article.complete {
+      clear: both;
+      .post {
+        padding-left: 15px;
+      }
+    }
+  }
+  /* end fix */
+}

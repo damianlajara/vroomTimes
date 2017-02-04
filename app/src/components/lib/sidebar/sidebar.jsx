@@ -1,6 +1,7 @@
 import React from 'react';
-import Card from '../card';
-import { filterCollections, flatten } from '../../helpers/utils.js';
+import Card from '../../card';
+import { filterCollections, flatten } from '../../../helpers/utils.js';
+import './sidebar.scss';
 
 export default function Sidebar({ sideColumn: { collections = [] } }) {
   const filteredCollections = filterCollections(collections);
@@ -9,9 +10,7 @@ export default function Sidebar({ sideColumn: { collections = [] } }) {
   return (
     <div className="row side-content">
       <h3 id="cColumn" className="title">News</h3>
-      {
-        filteredPosts.map((post, i) => <Card key={i} post={post} />)
-      }
+      { filteredPosts.map((post, i) => <Card key={i} post={post} />) }
     </div>
   )
 }

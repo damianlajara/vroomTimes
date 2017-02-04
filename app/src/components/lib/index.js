@@ -1,2 +1,2 @@
-export { default as Column } from './column.jsx';
-export { default as Sidebar } from './sidebar.jsx';
+export { default as Column } from './column/column.jsx';
+export { default as Sidebar } from './sidebar/sidebar.jsx';

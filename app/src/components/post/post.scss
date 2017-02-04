@@ -1,0 +1,43 @@
+@import '../../styles/colors';
+
+.post {
+  /*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);*/
+  background-color: $bg-light;
+  &:nth-child(even) {
+    margin-left: 10px;
+  }
+  &:nth-child(odd) {
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+  .post-title {
+    color: #000;
+    font-size: 21px;
+    text-decoration: none;
+  }
+  .post-date {
+    color: #727272;
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .post-caption {
+    padding: 20px 24px;
+  }
+  .post-description {
+    margin: 14px auto;
+    font-size: 14px;
+  }
+  .post-tag {
+    display: block;
+    font-size: 15px;
+    margin: 5px 0;
+    color: $light-color;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+  }
+  .image {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
